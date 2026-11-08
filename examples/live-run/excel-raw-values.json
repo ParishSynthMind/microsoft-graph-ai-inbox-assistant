@@ -1,0 +1,62 @@
+[
+  {
+    "Received": 46334.5166666667,
+    "From": "Priya Shah",
+    "Email": "p***@northwind-demo.example",
+    "Company": "Northwind Traders",
+    "Type": "meeting_request",
+    "Priority": "normal",
+    "Summary": "Priya wants a 30-minute call on Thursday morning to agree delivery dates for the Q1 desk order before signing.",
+    "Due": "",
+    "Meeting hold": "Thu 12 Nov 11:00-11:30",
+    "Files": "",
+    "Status": "New",
+    "Message ID": "<S***@example>",
+    "AI cost USD": 0.0118
+  },
+  {
+    "Received": 46334.5166666667,
+    "From": "Accounts",
+    "Email": "a***@contoso-supplier.example",
+    "Company": "Contoso Supplies",
+    "Type": "invoice_or_payment",
+    "Priority": "normal",
+    "Summary": "Sends invoice INV-553 for October, totalling 1,240.00 GBP, requesting payment by 30 November 2026.",
+    "Due": 46356,
+    "Meeting hold": "",
+    "Files": "https://onedrive.live.com/... (folder link)",
+    "Status": "New",
+    "Message ID": "<S***@example>",
+    "AI cost USD": 0.0115
+  },
+  {
+    "Received": 46334.5166666667,
+    "From": "Tom Reed",
+    "Email": "t***@fabrikam-demo.example",
+    "Company": "Fabrikam Ltd",
+    "Type": "quote_request",
+    "Priority": "normal",
+    "Summary": "Wants a quote for 40 sit-stand desks to an attached spec, delivered to their Leeds office, by 20 November.",
+    "Due": 46346,
+    "Meeting hold": "",
+    "Files": "https://onedrive.live.com/... (folder link)",
+    "Status": "New",
+    "Message ID": "<S***@example>",
+    "AI cost USD": 0.0114
+  },
+  {
+    "Received": 46334.5208333333,
+    "From": "Sam Ortiz",
+    "Email": "s***@tailspin-demo.example",
+    "Company": "Tailspin Toys",
+    "Type": "support_issue",
+    "Priority": "urgent",
+    "Summary": "Their booking page has shown an error since 9am, stopping customers booking, and they want someone to fix it today.",
+    "Due": 46334,
+    "Meeting hold": "",
+    "Files": "",
+    "Status": "New",
+    "Message ID": "<S***@example>",
+    "AI cost USD": 0.0111
+  }
+]

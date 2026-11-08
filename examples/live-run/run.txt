@@ -1,0 +1,35 @@
+# Live run on a real personal Microsoft account, 8 November 2026 (Microsoft Graph v1.0, Claude Sonnet 5.5)
+$ graph-assistant run --dry-run
+[planned  ] priya@northwind-demo.example     Call about the Q1 desk order                     hold Thu 12 Nov 11:00-11:30
+[planned  ] accounts@contoso-supplier.example Invoice INV-553 for October                      1 file(s)
+[planned  ] tom@fabrikam-demo.example        Quote for 40 desks                               1 file(s)
+[skipped  ] news@updates-demo.example        Your weekly product digest                         not a request
+4 message(s), AI spend $0.0455
+
+$ graph-assistant run
+[logged   ] priya@northwind-demo.example     Call about the Q1 desk order                     hold Thu 12 Nov 11:00-11:30
+[logged   ] accounts@contoso-supplier.example Invoice INV-553 for October                      1 file(s)
+[logged   ] tom@fabrikam-demo.example        Quote for 40 desks                               1 file(s)
+[skipped  ] news@updates-demo.example        Your weekly product digest                         not a request
+4 message(s), AI spend $0.0452
+
+$ graph-assistant run   (again)
+[duplicate] priya@northwind-demo.example     Call about the Q1 desk order                       already handled
+[duplicate] accounts@contoso-supplier.example Invoice INV-553 for October                        already handled
+[duplicate] tom@fabrikam-demo.example        Quote for 40 desks                                 already handled
+[duplicate] news@updates-demo.example        Your weekly product digest                         already handled
+4 message(s), AI spend $0.0000
+
+$ graph-assistant run   (third time)
+0 message(s), AI spend $0.0000
+
+$ graph-assistant report
+{"logged": 3, "skipped": 1} AI spend $0.0452
+
+$ graph-assistant run   (a new email has arrived)
+[logged   ] sam@tailspin-demo.example        URGENT - booking system down                     
+1 message(s), AI spend $0.0111
+
+$ graph-assistant run
+[duplicate] sam@tailspin-demo.example        URGENT - booking system down                       already handled
+1 message(s), AI spend $0.0000

@@ -312,6 +312,15 @@ class FakeGraph:
             cols = _header_from_xlsx(item.content)
             item.tables[name] = {"id": tid, "columns": cols, "rows": [], "address": body["address"]}
             return FakeResponse(201, {"id": tid, "name": name})
+        fm = re.fullmatch(r"/worksheets/[^/]+/range\(address='([^']+)'\)(/format(?:/autofitColumns|/autofitRows)?)?", rest)
+        if fm:
+            address, tail = unquote(fm.group(1)), fm.group(2) or ""
+            if method == "PATCH" and not tail and "numberFormat" in body:
+                m2 = re.fullmatch(r"([A-Z]+)(\d+):([A-Z]+)(\d+)", address)
+                if not m2 or len(body["numberFormat"]) != int(m2.group(4)) - int(m2.group(2)) + 1:
+                    return err(400, "InvalidArgument", "The number of rows in the array does not match the range.")
+            item.__dict__.setdefault("formats", []).append((method, address, tail, body))
+            return FakeResponse(200 if method == "PATCH" else 204, {} if method == "PATCH" else None)
         tm = re.fullmatch(r"/tables/([^/]+)", rest)
         if tm and method == "PATCH":
             key = unquote(tm.group(1))

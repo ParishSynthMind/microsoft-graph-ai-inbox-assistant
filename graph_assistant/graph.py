@@ -239,6 +239,26 @@ class GraphClient:
         return self.request("PATCH", f"{self.drive}/items/{item_id}/workbook/tables/{t['id']}",
                             json={"name": name}, headers=hdr)
 
+    def set_number_format(self, item_id: str, worksheet: str, column: str, first_row: int, last_row: int,
+                          fmt: str) -> None:
+        """Graph wants one format per cell, so the 2-D array is built to the size of the range."""
+        n = last_row - first_row + 1
+        self.request("PATCH", f"{self.drive}/items/{item_id}/workbook/worksheets/{quote(worksheet)}"
+                              f"/range(address='{column}{first_row}:{column}{last_row}')",
+                     json={"numberFormat": [[fmt]] * n})
+
+    def autofit_columns(self, item_id: str, worksheet: str, columns: str) -> None:
+        self.request("POST", f"{self.drive}/items/{item_id}/workbook/worksheets/{quote(worksheet)}"
+                             f"/range(address='{columns}')/format/autofitColumns")
+
+    def autofit_rows(self, item_id: str, worksheet: str, rows: str) -> None:
+        self.request("POST", f"{self.drive}/items/{item_id}/workbook/worksheets/{quote(worksheet)}"
+                             f"/range(address='{rows}')/format/autofitRows")
+
+    def set_column_format(self, item_id: str, worksheet: str, column: str, **fmt) -> None:
+        self.request("PATCH", f"{self.drive}/items/{item_id}/workbook/worksheets/{quote(worksheet)}"
+                              f"/range(address='{column}:{column}')/format", json=fmt)
+
     def list_tables(self, item_id: str) -> list[dict]:
         return self.request("GET", f"{self.drive}/items/{item_id}/workbook/tables").get("value", [])
 

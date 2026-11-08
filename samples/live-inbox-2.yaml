@@ -1,0 +1,8 @@
+# Second live round: one new email arriving after the first run.
+- subject: URGENT - booking system down
+  from: [Sam Ortiz, sam@tailspin-demo.example]
+  body: |
+    Our booking page has been showing an error since 9am and customers can't book.
+    Can someone look at it today please? This is costing us bookings.
+    Sam
+    Tailspin Toys

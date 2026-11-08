@@ -1,0 +1,19 @@
+[
+  {
+    "categories": [
+      "AI logged"
+    ],
+    "transactionId": "graph-assistant-f6a68aa6a2a39e4b4bad328fcc1dd2ab",
+    "subject": "Hold: Priya Shah - Call about the Q1 desk order",
+    "showAs": "tentative",
+    "start": {
+      "dateTime": "2026-11-12T11:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2026-11-12T11:30:00.0000000",
+      "timeZone": "UTC"
+    },
+    "attendees": []
+  }
+]

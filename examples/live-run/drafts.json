@@ -1,0 +1,17 @@
+[
+  {
+    "subject": "RE: Call about the Q1 desk order",
+    "isDraft": true,
+    "to": [
+      {
+        "emailAddress": {
+          "name": "Priya Shah",
+          "address": "p***@northwind-demo.example"
+        }
+      }
+    ],
+    "body": {
+      "content": "Hi Priya,\n\nThanks for getting in touch. I've pencilled in Thursday 12 November at 11:00 to 11:30 (Europe/London). Does that work for you? If not, send me a couple of times that suit and I'll move it."
+    }
+  }
+]

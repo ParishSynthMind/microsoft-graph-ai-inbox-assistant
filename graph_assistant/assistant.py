@@ -156,6 +156,8 @@ class Assistant:
                 n = self.store.record_error(key, f"{type(e).__name__}: {e}") if not dry_run else 0
                 outcomes.append(Outcome(msg.get("subject") or "", _sender(msg)[1], "error",
                                         f"{type(e).__name__}: {e} (attempt {n})"))
+        if not dry_run and any(o.status in ("logged", "review") for o in outcomes):
+            self.tidy_sheet()
         # Only move the delta link on when every message was dealt with, so nothing is ever skipped.
         if not dry_run and not stopped and next_delta and all(o.status != "error" for o in outcomes):
             self.store.set_meta("inbox_delta", next_delta)
@@ -292,6 +294,22 @@ class Assistant:
         else:
             out.status = "planned" if not problems else "planned-review"
         return out
+
+    def tidy_sheet(self) -> None:
+        """Cosmetic: real dates shown as dates, columns wide enough to read. Never fails a run.
+        (Excel Online turns ISO date text into real dates, which then show as #### in a narrow column.)"""
+        try:
+            n = len(self.g.table_rows(self.workbook_id, self.cfg.table))
+            ws = "Requests"
+            for name, fmt in (("Received", "yyyy-mm-dd hh:mm"), ("Due", "yyyy-mm-dd")):
+                col = _col_letter(COLUMNS.index(name) + 1)
+                self.g.set_number_format(self.workbook_id, ws, col, 2, n + 1, fmt)
+            summary = _col_letter(COLUMNS.index("Summary") + 1)
+            self.g.autofit_columns(self.workbook_id, ws, f"A:{_col_letter(len(COLUMNS))}")
+            self.g.set_column_format(self.workbook_id, ws, summary, columnWidth=330, wrapText=True)
+            self.g.autofit_rows(self.workbook_id, ws, f"A1:{_col_letter(len(COLUMNS))}{n + 1}")
+        except GraphError as e:
+            self.log(f"could not tidy the sheet (rows are saved): {e}")
 
     # --- helpers -------------------------------------------------------
     def _problems(self, ex) -> list[str]:

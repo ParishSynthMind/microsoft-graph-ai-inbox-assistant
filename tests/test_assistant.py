@@ -2,6 +2,7 @@ import pytest
 
 from graph_assistant.assistant import COLUMNS, safe_name
 from graph_assistant.fake_graph import err
+from graph_assistant.graph import GraphError
 from graph_assistant.store import Store
 
 from .conftest import FakeExtractor, field, make_assistant
@@ -272,3 +273,21 @@ def test_missing_workbook_says_run_setup(graph, fake, store, cfg):
 def test_safe_name():
     assert safe_name('Re: "Q1" order?') == "Re Q1 order"
     assert safe_name("...") == "untitled"
+
+
+def test_sheet_is_tidied_after_rows_are_added(graph, fake, store, cfg):
+    seed(fake, MEET, QUOTE)
+    make_assistant(graph, FakeExtractor(ANSWERS), store, cfg).run()
+    fmts = fake.find_path(cfg.workbook_path).formats
+    assert ("PATCH", "A2:A3", "", {"numberFormat": [["yyyy-mm-dd hh:mm"]] * 2}) in fmts
+    assert ("PATCH", "H2:H3", "", {"numberFormat": [["yyyy-mm-dd"]] * 2}) in fmts
+    assert any(f[2] == "/format/autofitColumns" for f in fmts)
+    assert ("PATCH", "G:G", "/format", {"columnWidth": 330, "wrapText": True}) in fmts
+    assert ("POST", "A1:M3", "/format/autofitRows", None) in fmts
+
+
+def test_tidy_failure_never_fails_the_run(graph, fake, store, cfg):
+    seed(fake, QUOTE)
+    graph.autofit_columns = lambda *a: (_ for _ in ()).throw(GraphError(400, "InvalidArgument", "nope"))
+    out = make_assistant(graph, FakeExtractor(ANSWERS), store, cfg).run()
+    assert out[0].status == "logged" and store.get_meta("inbox_delta")
