@@ -1,0 +1,39 @@
+# Microsoft Graph AI inbox assistant: settings. Secrets never go in this file.
+
+# Who it acts as.
+#   Delegated (a person signs in once with a device code):  mailbox /me,  drive /me/drive
+#   App-only (a background service in a business tenant):   mailbox /users/office@yourco.com,
+#                                                           drive /sites/{site-id}/drive  (a SharePoint library)
+mailbox: /me
+drive: /me/drive
+
+# Where things go, inside that drive.
+workbook_path: AI Inbox/Requests.xlsx   # Excel Online workbook; `graph-assistant setup` creates it
+table: Requests                         # the Excel table rows are added to
+attachments_root: AI Inbox/Attachments  # files land in <root>/<YYYY-MM>/<date> <sender> - <subject>/
+
+timezone: Europe/London   # times in the calendar and in the log
+since_days: 7             # first run only looks at mail from the last N days
+ignore_senders:           # never logged (your own address is always ignored)
+  - noreply@
+  - no-reply@
+  - mailer-daemon@
+
+book_meetings: true       # put a tentative hold in the calendar when someone asks to meet
+invite_sender: false      # false = the hold is only in your calendar, no invite is sent to anyone
+draft_replies: true       # write a reply proposing the slot into Drafts; it is never sent automatically
+working_hours:
+  start: "09:00"
+  end: "17:30"
+  days: [mon, tue, wed, thu, fri]
+  buffer_minutes: 15
+  lead_hours: 2
+  default_meeting_minutes: 30
+
+model: claude-sonnet-5-5
+cost_cap_usd: 0.50        # per run
+max_attachment_mb: 150
+categories:
+  logged: AI logged
+  skipped: AI skipped
+  review: AI check

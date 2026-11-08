@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "microsoft-graph-ai-inbox-assistant"
+version = "0.1.0"
+description = "Claude reads new Outlook mail through Microsoft Graph, logs each request to an Excel Online table, files attachments into OneDrive or SharePoint and pencils a calendar hold."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "anthropic>=2.0",
+  "msal>=1.30",
+  "requests>=2.31",
+  "openpyxl>=3.1",
+  "PyYAML>=6.0",
+]
+
+[project.scripts]
+graph-assistant = "graph_assistant.cli:main"
+
+[tool.setuptools]
+packages = ["graph_assistant"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501", "E731"]

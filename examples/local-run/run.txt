@@ -1,0 +1,11 @@
+$ graph-assistant run   (Monday 9 Nov 2026 09:00, Europe/London)
+[logged   ] priya@northwind-demo.example     Call about the Q1 order                          hold Tue 10 Nov 14:30-15:15
+[logged   ] tom@fabrikam-demo.example        Quote for 40 desks                               1 file(s)
+[logged   ] sam@tailspin-demo.example        URGENT - booking system down                     1 file(s)
+[logged   ] accounts@contoso-supplier.example Invoice INV-553 for October                      1 file(s)
+[skipped  ] news@updates-demo.example        Your weekly product digest                         not a request
+[logged   ] jo.bennett@woodgrove-demo.example catch up?                                        hold Mon 09 Nov 11:00-11:30
+6 message(s), AI spend $0.0670
+
+$ graph-assistant run   (again)
+0 message(s), AI spend $0.0000

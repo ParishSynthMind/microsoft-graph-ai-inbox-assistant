@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Hold: Priya Shah - Call about the Q1 order",
+    "start": {
+      "dateTime": "2026-11-10T14:30:00",
+      "timeZone": "Europe/London"
+    },
+    "end": {
+      "dateTime": "2026-11-10T15:15:00",
+      "timeZone": "Europe/London"
+    },
+    "showAs": "tentative",
+    "body": {
+      "contentType": "text",
+      "content": "Held by the AI inbox assistant from the email \"Call about the Q1 order\" from Priya Shah <priya@northwind-demo.example>.\nWhat they want: Priya wants a 45-minute call on Tuesday afternoon to review the Q1 order, add standing desks and agree delivery dates.\n\nThis is a tentative hold: confirm or move it."
+    },
+    "categories": [
+      "AI logged"
+    ],
+    "transactionId": "graph-assistant-53dc022162cbda9193a22bb59b208c04",
+    "id": "ev-id0019",
+    "isCancelled": false
+  },
+  {
+    "subject": "Hold: Jo - catch up",
+    "start": {
+      "dateTime": "2026-11-09T11:00:00",
+      "timeZone": "Europe/London"
+    },
+    "end": {
+      "dateTime": "2026-11-09T11:30:00",
+      "timeZone": "Europe/London"
+    },
+    "showAs": "tentative",
+    "body": {
+      "contentType": "text",
+      "content": "Held by the AI inbox assistant from the email \"catch up?\" from Jo <jo.bennett@woodgrove-demo.example>.\nWhat they want: Jo asks if you are free for a catch up at some point, with no particular time specified.\n\nThis is a tentative hold: confirm or move it."
+    },
+    "categories": [
+      "AI logged"
+    ],
+    "transactionId": "graph-assistant-a2d1c2bd47647d9589d990b6077bdd7a",
+    "id": "ev-id0028",
+    "isCancelled": false
+  }
+]

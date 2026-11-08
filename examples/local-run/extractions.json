@@ -1,0 +1,406 @@
+{
+  "Call about the Q1 order": {
+    "fields": {
+      "request_type": {
+        "value": "meeting_request",
+        "confidence": "high",
+        "source_snippet": "Could we get 45 minutes on Tuesday afternoon to go through the Q1 order?",
+        "checks": []
+      },
+      "requester_name": {
+        "value": "Priya Shah",
+        "confidence": "high",
+        "source_snippet": "Priya Shah\nPurchasing Manager, Northwind Traders",
+        "checks": []
+      },
+      "requester_company": {
+        "value": "Northwind Traders",
+        "confidence": "high",
+        "source_snippet": "Purchasing Manager, Northwind Traders",
+        "checks": []
+      },
+      "summary": {
+        "value": "Priya wants a 45-minute call on Tuesday afternoon to review the Q1 order, add standing desks and agree delivery dates.",
+        "confidence": "high",
+        "source_snippet": "go through the Q1 order? We want to add the standing desks",
+        "checks": []
+      },
+      "priority": {
+        "value": "normal",
+        "confidence": "low",
+        "source_snippet": "",
+        "checks": [
+          "source snippet not found in the email"
+        ]
+      },
+      "due_date": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_wanted": {
+        "value": true,
+        "confidence": "high",
+        "source_snippet": "Could we get 45 minutes on Tuesday afternoon",
+        "checks": []
+      },
+      "meeting_minutes": {
+        "value": 45,
+        "confidence": "high",
+        "source_snippet": "45 minutes",
+        "checks": []
+      },
+      "meeting_date": {
+        "value": "2026-11-10",
+        "confidence": "high",
+        "source_snippet": "Tuesday afternoon",
+        "checks": []
+      },
+      "meeting_window": {
+        "value": "afternoon",
+        "confidence": "high",
+        "source_snippet": "Tuesday afternoon",
+        "checks": []
+      }
+    },
+    "cost_usd": 0.011844,
+    "input_tokens": 3452,
+    "output_tokens": 494
+  },
+  "Quote for 40 desks": {
+    "fields": {
+      "request_type": {
+        "value": "quote_request",
+        "confidence": "high",
+        "source_snippet": "Please could you quote for 40 sit-stand desks to the attached spec",
+        "checks": []
+      },
+      "requester_name": {
+        "value": "Tom Reed",
+        "confidence": "high",
+        "source_snippet": "Tom Reed",
+        "checks": []
+      },
+      "requester_company": {
+        "value": "Fabrikam Ltd",
+        "confidence": "high",
+        "source_snippet": "Fabrikam Ltd",
+        "checks": []
+      },
+      "summary": {
+        "value": "Requests a quote for 40 sit-stand desks to an attached spec, delivered to their Leeds office, needed by 20 November.",
+        "confidence": "high",
+        "source_snippet": "quote for 40 sit-stand desks to the attached spec, delivered to our Leeds office",
+        "checks": []
+      },
+      "priority": {
+        "value": "normal",
+        "confidence": "medium",
+        "source_snippet": "We need the quote by Friday 20 November as the budget closes that day.",
+        "checks": []
+      },
+      "due_date": {
+        "value": "2026-11-20",
+        "confidence": "high",
+        "source_snippet": "We need the quote by Friday 20 November",
+        "checks": []
+      },
+      "meeting_wanted": {
+        "value": false,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_minutes": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_date": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_window": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      }
+    },
+    "cost_usd": 0.011498000000000001,
+    "input_tokens": 3444,
+    "output_tokens": 461
+  },
+  "URGENT - booking system down": {
+    "fields": {
+      "request_type": {
+        "value": "support_issue",
+        "confidence": "high",
+        "source_snippet": "Our booking page has been showing an error since 9am and customers can't book.",
+        "checks": []
+      },
+      "requester_name": {
+        "value": "Sam Ortiz",
+        "confidence": "high",
+        "source_snippet": "Sam Ortiz <sam@tailspin-demo.example>",
+        "checks": []
+      },
+      "requester_company": {
+        "value": "Tailspin Toys",
+        "confidence": "high",
+        "source_snippet": "Tailspin Toys",
+        "checks": []
+      },
+      "summary": {
+        "value": "Their booking page has shown an error since 9am so customers can't book, and they want someone to fix it today.",
+        "confidence": "high",
+        "source_snippet": "Can someone look at it today please?",
+        "checks": []
+      },
+      "priority": {
+        "value": "urgent",
+        "confidence": "high",
+        "source_snippet": "URGENT - booking system down",
+        "checks": []
+      },
+      "due_date": {
+        "value": "2026-11-08",
+        "confidence": "medium",
+        "source_snippet": "Can someone look at it today please?",
+        "checks": []
+      },
+      "meeting_wanted": {
+        "value": false,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_minutes": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_date": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_window": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      }
+    },
+    "cost_usd": 0.011122,
+    "input_tokens": 3421,
+    "output_tokens": 428
+  },
+  "Invoice INV-553 for October": {
+    "fields": {
+      "request_type": {
+        "value": "invoice_or_payment",
+        "confidence": "high",
+        "source_snippet": "Please find attached invoice INV-553 for October, total 1,240.00 GBP, due 30 November 2026.",
+        "checks": []
+      },
+      "requester_name": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "requester_company": {
+        "value": "Contoso Supplies",
+        "confidence": "medium",
+        "source_snippet": "Contoso Supplies Accounts Team",
+        "checks": []
+      },
+      "summary": {
+        "value": "Sends invoice INV-553 for October, 1,240.00 GBP, requesting payment by 30 November 2026.",
+        "confidence": "high",
+        "source_snippet": "invoice INV-553 for October, total 1,240.00 GBP, due 30 November 2026",
+        "checks": []
+      },
+      "priority": {
+        "value": "normal",
+        "confidence": "medium",
+        "source_snippet": "due 30 November 2026",
+        "checks": []
+      },
+      "due_date": {
+        "value": "2026-11-30",
+        "confidence": "high",
+        "source_snippet": "due 30 November 2026",
+        "checks": []
+      },
+      "meeting_wanted": {
+        "value": false,
+        "confidence": "medium",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_minutes": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_date": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_window": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      }
+    },
+    "cost_usd": 0.011434,
+    "input_tokens": 3472,
+    "output_tokens": 449
+  },
+  "Your weekly product digest": {
+    "fields": {
+      "request_type": {
+        "value": "not_a_request",
+        "confidence": "high",
+        "source_snippet": "This week: five new templates, a webinar on spreadsheets and our autumn sale.",
+        "checks": []
+      },
+      "requester_name": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "requester_company": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "summary": {
+        "value": "A weekly product newsletter promoting new templates, a spreadsheet webinar and an autumn sale; no request is made.",
+        "confidence": "high",
+        "source_snippet": "Your weekly product digest",
+        "checks": []
+      },
+      "priority": {
+        "value": "low",
+        "confidence": "medium",
+        "source_snippet": "Unsubscribe any time.",
+        "checks": []
+      },
+      "due_date": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_wanted": {
+        "value": false,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_minutes": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_date": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_window": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      }
+    },
+    "cost_usd": 0.010522,
+    "input_tokens": 3386,
+    "output_tokens": 375
+  },
+  "catch up?": {
+    "fields": {
+      "request_type": {
+        "value": "meeting_request",
+        "confidence": "high",
+        "source_snippet": "are you free sometime for a catch up?",
+        "checks": []
+      },
+      "requester_name": {
+        "value": "Jo",
+        "confidence": "high",
+        "source_snippet": "Jo",
+        "checks": []
+      },
+      "requester_company": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "summary": {
+        "value": "Jo asks if you are free for a catch up at some point, with no particular time specified.",
+        "confidence": "high",
+        "source_snippet": "are you free sometime for a catch up? Whenever suits.",
+        "checks": []
+      },
+      "priority": {
+        "value": "low",
+        "confidence": "medium",
+        "source_snippet": "Whenever suits.",
+        "checks": []
+      },
+      "due_date": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_wanted": {
+        "value": true,
+        "confidence": "high",
+        "source_snippet": "are you free sometime for a catch up?",
+        "checks": []
+      },
+      "meeting_minutes": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_date": {
+        "value": null,
+        "confidence": "high",
+        "source_snippet": "",
+        "checks": []
+      },
+      "meeting_window": {
+        "value": "any",
+        "confidence": "medium",
+        "source_snippet": "Whenever suits.",
+        "checks": []
+      }
+    },
+    "cost_usd": 0.010578,
+    "input_tokens": 3379,
+    "output_tokens": 382
+  }
+}
