@@ -110,6 +110,13 @@ ruff check .
 - the slot finder: lead time, buffers, free and cancelled events, preferred day and half-day, weekends, nothing free
 - the whole flow: holds, drafts, categories, attachments, newsletters skipped, doubtful dates sent for review with no hold, a planted instruction in an email, re-runs, a fresh machine, a crash after upload, a crash after booking, three strikes, dry run, cost cap, throttling mid-run
 
+## AI review on pull requests
+
+Changes go in on a branch and a pull request, not straight to `main`. Two checks run on every pull request:
+
+- **tests** (`.github/workflows/tests.yml`): lint and the full test suite. This is the gate.
+- **AI review** (`.github/workflows/claude-review.yml`): Claude reads the diff with Anthropic's `code-review` plugin and leaves comments on the lines it has concerns about. It never approves, blocks or pushes code. Drafts and pull requests from forks are skipped, and if the `CLAUDE_CODE_OAUTH_TOKEN` secret is missing the job says so and skips rather than failing. To re-run a review by hand: Actions, AI review, Run workflow, enter the pull request number.
+
 ## Live test
 
 Run on 8 November 2026 on a real personal Microsoft account (Outlook.com mailbox and calendar, 5 GB OneDrive), Microsoft Graph v1.0, delegated device-code sign-in, Claude Sonnet 5.5. Everything below was read back from Microsoft afterwards by [`scripts/live_readback.py`](scripts/live_readback.py); evidence in [`examples/live-run/`](examples/live-run/) (email addresses masked).
